@@ -1,3 +1,15 @@
 table{
-	width:800px !important;
+	width:600px !important;
+	font-size:10px;
+}
+
+.container{
+	margin:20px;
+	width:100%;
+}
+
+.table-results{
+	float:left;
+	display:inline-block;
+	margin:10px;
 }

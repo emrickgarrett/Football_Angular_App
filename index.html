@@ -24,63 +24,104 @@
 	</head>
 
 	<body ng-controller="MainCtrl">
+
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Fantasy Angular App</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+						<li><a href="#">Link</a></li>
+						<li class="dropdown">
+							<a href="#" class="drodown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another Action</a></li>
+								<li><a href="#">Third Action</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-right">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search">
+						</div>
+						<button type="submit" class="btn btn-default">Submit</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+
 		<div class="container">
-		  <table class="table">
-		  	<thead>
-		  		<h3>Running Backs This Week</h3>
-			 	<tr>
-			 		<th>Ranking</th>
-				  	<th>Player Name</th>
-				  	<th>Standard</th>
-				  	<th>Standard High</th>
-				  	<th>Standard Low</th>
-				  	<th>PPR</th>
-				  	<th>PPR High</th>
-				  	<th>PPR Low</th>
-				  	<th>Team</th>
-		  		</tr>
-		  	</thead>
-		  	<tr ng-repeat="player in topRBs.Rankings">
-		  		<td>{{$index + 1}}</td>
-		  		<td>{{player.name}}</td>
-		  		<td>{{player.standard}}</td>
-		  		<td>{{player.standardHigh}}</td>
-		  		<td>{{player.standardLow}}</td>
-		  		<td>{{player.ppr}}</td>
-		  		<td>{{player.pprHigh}}</td>
-		  		<td>{{player.pprLow}}</td>
-		  		<td>{{player.team}}</td>
-		  	</tr>
-		  </table>
+
+			<div id="rb-results" class="table-results">
+			  <table class="table">
+			  	<thead>
+			  		<h3>Running Backs This Week</h3>
+				 	<tr>
+				 		<th>Ranking</th>
+					  	<th>Player Name</th>
+					  	<th>Standard</th>
+					  	<th>Standard High</th>
+					  	<th>Standard Low</th>
+					  	<th>PPR</th>
+					  	<th>PPR High</th>
+					  	<th>PPR Low</th>
+					  	<th>Team</th>
+			  		</tr>
+			  	</thead>
+			  	<tr ng-repeat="player in topRBs.Rankings">
+			  		<td>{{$index + 1}}</td>
+			  		<td>{{player.name}}</td>
+			  		<td>{{player.standard}}</td>
+			  		<td>{{player.standardHigh}}</td>
+			  		<td>{{player.standardLow}}</td>
+			  		<td>{{player.ppr}}</td>
+			  		<td>{{player.pprHigh}}</td>
+			  		<td>{{player.pprLow}}</td>
+			  		<td>{{player.team}}</td>
+			  	</tr>
+			  </table>
+			</div>
 
 		  <!-- Testing for QB's -->
-		  <table class="table">
-		  	<thead>
-		  		<h3>Quarter Backs This Week</h3>
-			 	<tr>
-			 		<th>Ranking</th>
-				  	<th>Player Name</th>
-				  	<th>Standard</th>
-				  	<th>Standard High</th>
-				  	<th>Standard Low</th>
-				  	<th>PPR</th>
-				  	<th>PPR High</th>
-				  	<th>PPR Low</th>
-				  	<th>Team</th>
-		  		</tr>
-		  	</thead>
-		  	<tr ng-repeat="player in topQBs.Rankings">
-		  		<td>{{$index + 1}}</td>
-		  		<td>{{player.name}}</td>
-		  		<td>{{player.standard}}</td>
-		  		<td>{{player.standardHigh}}</td>
-		  		<td>{{player.standardLow}}</td>
-		  		<td>{{player.ppr}}</td>
-		  		<td>{{player.pprHigh}}</td>
-		  		<td>{{player.pprLow}}</td>
-		  		<td>{{player.team}}</td>
-		  	</tr>
-		  </table>
+		  <div id="qb-results" class="table-results">
+			  <table class="table">
+			  	<thead>
+			  		<h3>Quarter Backs This Week</h3>
+				 	<tr>
+				 		<th>Ranking</th>
+					  	<th>Player Name</th>
+					  	<th>Standard</th>
+					  	<th>Standard High</th>
+					  	<th>Standard Low</th>
+					  	<th>PPR</th>
+					  	<th>PPR High</th>
+					  	<th>PPR Low</th>
+					  	<th>Team</th>
+			  		</tr>
+			  	</thead>
+			  	<tr ng-repeat="player in topQBs.Rankings">
+			  		<td>{{$index + 1}}</td>
+			  		<td>{{player.name}}</td>
+			  		<td>{{player.standard}}</td>
+			  		<td>{{player.standardHigh}}</td>
+			  		<td>{{player.standardLow}}</td>
+			  		<td>{{player.ppr}}</td>
+			  		<td>{{player.pprHigh}}</td>
+			  		<td>{{player.pprLow}}</td>
+			  		<td>{{player.team}}</td>
+			  	</tr>
+			  </table>	
+		  </div>
 	  	</div>
 	</body>
 </html>
