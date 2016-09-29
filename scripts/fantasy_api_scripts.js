@@ -79,8 +79,8 @@
 			$scope.getTopQBs(week, ppr, topQBsFunc);
 			$scope.getTopRBs(week, ppr, topRBsFunc);
 			$scope.getTopWRs(week, ppr, topWRsFunc);
-			$scope.getTopDefs(week, ppr, topTEsFunc);
-			$scope.getTopTEs(week, ppr, topDEFsFunc);
+			$scope.getTopDefs(week, ppr, topDEFsFunc);
+			$scope.getTopTEs(week, ppr, topTEsFunc);
 			$scope.getTopKs(week, ppr, topKsFunc);
 		}
 
