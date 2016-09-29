@@ -3,25 +3,84 @@
 <!doctype html>
 
 <html lang="en" ng-app="fantasyApp">
-<head>
-  <meta charset="utf-8">
+	<head>
+	  <meta charset="utf-8">
 
-  <title>Fantasy Football Example</title>
-  <meta name="description" content="Fantasy Football Angular Demo">
-  <meta name="author" content="Hugh Emrick">
+	  <title>Fantasy Football Example</title>
+	  <meta name="description" content="Fantasy Football Angular Demo">
+	  <meta name="author" content="Hugh Emrick">
 
-  <link rel="stylesheet" href="styles/general_formatting.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <script data-require="angular.js@1.2.16" data-semver="1.2.16" 
-    src="https://code.angularjs.org/1.2.16/angular.js"></script>
-  <script src="scripts/fantasy_api_scripts.js"></script>
-</head>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<body ng-controller="MainCtrl">
-  <h1>Hello Angular</h1>
-  {{10 / 5}}
-</body>
-</html
+	  <script data-require="angular.js@1.2.16" data-semver="1.2.16" 
+	    src="https://code.angularjs.org/1.2.16/angular.js"></script>
+
+	  <script src="scripts/fantasy_api_scripts.js"></script>
+	  <link rel="stylesheet" href="styles/general_formatting.css">
+	</head>
+
+	<body ng-controller="MainCtrl">
+		<div class="container">
+		  <table class="table">
+		  	<thead>
+		  		<h3>Running Backs This Week</h3>
+			 	<tr>
+			 		<th>Ranking</th>
+				  	<th>Player Name</th>
+				  	<th>Standard</th>
+				  	<th>Standard High</th>
+				  	<th>Standard Low</th>
+				  	<th>PPR</th>
+				  	<th>PPR High</th>
+				  	<th>PPR Low</th>
+				  	<th>Team</th>
+		  		</tr>
+		  	</thead>
+		  	<tr ng-repeat="player in topRBs.Rankings">
+		  		<td>{{$index + 1}}</td>
+		  		<td>{{player.name}}</td>
+		  		<td>{{player.standard}}</td>
+		  		<td>{{player.standardHigh}}</td>
+		  		<td>{{player.standardLow}}</td>
+		  		<td>{{player.ppr}}</td>
+		  		<td>{{player.pprHigh}}</td>
+		  		<td>{{player.pprLow}}</td>
+		  		<td>{{player.team}}</td>
+		  	</tr>
+		  </table>
+
+		  <!-- Testing for QB's -->
+		  <table class="table">
+		  	<thead>
+		  		<h3>Quarter Backs This Week</h3>
+			 	<tr>
+			 		<th>Ranking</th>
+				  	<th>Player Name</th>
+				  	<th>Standard</th>
+				  	<th>Standard High</th>
+				  	<th>Standard Low</th>
+				  	<th>PPR</th>
+				  	<th>PPR High</th>
+				  	<th>PPR Low</th>
+				  	<th>Team</th>
+		  		</tr>
+		  	</thead>
+		  	<tr ng-repeat="player in topQBs.Rankings">
+		  		<td>{{$index + 1}}</td>
+		  		<td>{{player.name}}</td>
+		  		<td>{{player.standard}}</td>
+		  		<td>{{player.standardHigh}}</td>
+		  		<td>{{player.standardLow}}</td>
+		  		<td>{{player.ppr}}</td>
+		  		<td>{{player.pprHigh}}</td>
+		  		<td>{{player.pprLow}}</td>
+		  		<td>{{player.team}}</td>
+		  	</tr>
+		  </table>
+	  	</div>
+	</body>
+</html>
