@@ -16,9 +16,11 @@
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	  <script data-require="angular.js@1.2.16" data-semver="1.2.16" 
-	    src="https://code.angularjs.org/1.2.16/angular.js"></script>
+	  <script src="includes/angular.min.js"></script>
+    <script src="includes/angular-route.min.js"></script>
 
+
+	  <script src="scripts/routing.js"></script>
 	  <script src="scripts/fantasy_api_scripts.js"></script>
 	  <link rel="stylesheet" href="styles/general_formatting.css">
 	</head>
@@ -60,192 +62,8 @@
 			</div>
 		</nav>
 
-		<div class="container">
-
-			<div id="rb-results" class="table-results">
-			  <table class="table">
-			  	<thead>
-			  		<h3>Running Backs This Week</h3>
-				 	<tr>
-				 		<th>Ranking</th>
-					  	<th>Player Name</th>
-					  	<th>Standard</th>
-					  	<th>Standard High</th>
-					  	<th>Standard Low</th>
-					  	<th>PPR</th>
-					  	<th>PPR High</th>
-					  	<th>PPR Low</th>
-					  	<th>Team</th>
-			  		</tr>
-			  	</thead>
-			  	<tr ng-repeat="player in topRBs.Rankings">
-			  		<td>{{$index + 1}}</td>
-			  		<td>{{player.name}}</td>
-			  		<td>{{player.standard}}</td>
-			  		<td>{{player.standardHigh}}</td>
-			  		<td>{{player.standardLow}}</td>
-			  		<td>{{player.ppr}}</td>
-			  		<td>{{player.pprHigh}}</td>
-			  		<td>{{player.pprLow}}</td>
-			  		<td>{{player.team}}</td>
-			  	</tr>
-			  </table>
-			</div>
-
-		  <!-- Testing for QB's -->
-		  <div id="qb-results" class="table-results">
-			  <table class="table">
-			  	<thead>
-			  		<h3>Quarter Backs This Week</h3>
-				 	<tr>
-				 		<th>Ranking</th>
-					  	<th>Player Name</th>
-					  	<th>Standard</th>
-					  	<th>Standard High</th>
-					  	<th>Standard Low</th>
-					  	<th>PPR</th>
-					  	<th>PPR High</th>
-					  	<th>PPR Low</th>
-					  	<th>Team</th>
-			  		</tr>
-			  	</thead>
-			  	<tr ng-repeat="player in topQBs.Rankings">
-			  		<td>{{$index + 1}}</td>
-			  		<td>{{player.name}}</td>
-			  		<td>{{player.standard}}</td>
-			  		<td>{{player.standardHigh}}</td>
-			  		<td>{{player.standardLow}}</td>
-			  		<td>{{player.ppr}}</td>
-			  		<td>{{player.pprHigh}}</td>
-			  		<td>{{player.pprLow}}</td>
-			  		<td>{{player.team}}</td>
-			  	</tr>
-			  </table>	
-		  </div>
-
-		  <!-- Testing for WR's -->
-		  <div id="wr-results" class="table-results">
-			  <table class="table">
-			  	<thead>
-			  		<h3>Wide Receivers This Week</h3>
-				 	<tr>
-				 		<th>Ranking</th>
-					  	<th>Player Name</th>
-					  	<th>Standard</th>
-					  	<th>Standard High</th>
-					  	<th>Standard Low</th>
-					  	<th>PPR</th>
-					  	<th>PPR High</th>
-					  	<th>PPR Low</th>
-					  	<th>Team</th>
-			  		</tr>
-			  	</thead>
-			  	<tr ng-repeat="player in topWRs.Rankings">
-			  		<td>{{$index + 1}}</td>
-			  		<td>{{player.name}}</td>
-			  		<td>{{player.standard}}</td>
-			  		<td>{{player.standardHigh}}</td>
-			  		<td>{{player.standardLow}}</td>
-			  		<td>{{player.ppr}}</td>
-			  		<td>{{player.pprHigh}}</td>
-			  		<td>{{player.pprLow}}</td>
-			  		<td>{{player.team}}</td>
-			  	</tr>
-			  </table>	
-		  </div>
-
-		  <!-- Testing for TE's -->
-		  <div id="te-results" class="table-results">
-			  <table class="table">
-			  	<thead>
-			  		<h3>Tight Ends This Week</h3>
-				 	<tr>
-				 		<th>Ranking</th>
-					  	<th>Player Name</th>
-					  	<th>Standard</th>
-					  	<th>Standard High</th>
-					  	<th>Standard Low</th>
-					  	<th>PPR</th>
-					  	<th>PPR High</th>
-					  	<th>PPR Low</th>
-					  	<th>Team</th>
-			  		</tr>
-			  	</thead>
-			  	<tr ng-repeat="player in topTEs.Rankings">
-			  		<td>{{$index + 1}}</td>
-			  		<td>{{player.name}}</td>
-			  		<td>{{player.standard}}</td>
-			  		<td>{{player.standardHigh}}</td>
-			  		<td>{{player.standardLow}}</td>
-			  		<td>{{player.ppr}}</td>
-			  		<td>{{player.pprHigh}}</td>
-			  		<td>{{player.pprLow}}</td>
-			  		<td>{{player.team}}</td>
-			  	</tr>
-			  </table>	
-		  </div>
-
-		  <!-- Testing for DEF's -->
-		  <div id="def-results" class="table-results">
-			  <table class="table">
-			  	<thead>
-			  		<h3>D/STs This Week</h3>
-				 	<tr>
-				 		<th>Ranking</th>
-					  	<th>Player Name</th>
-					  	<th>Standard</th>
-					  	<th>Standard High</th>
-					  	<th>Standard Low</th>
-					  	<th>PPR</th>
-					  	<th>PPR High</th>
-					  	<th>PPR Low</th>
-					  	<th>Team</th>
-			  		</tr>
-			  	</thead>
-			  	<tr ng-repeat="player in topDEFs.Rankings">
-			  		<td>{{$index + 1}}</td>
-			  		<td>{{player.name}}</td>
-			  		<td>{{player.standard}}</td>
-			  		<td>{{player.standardHigh}}</td>
-			  		<td>{{player.standardLow}}</td>
-			  		<td>{{player.ppr}}</td>
-			  		<td>{{player.pprHigh}}</td>
-			  		<td>{{player.pprLow}}</td>
-			  		<td>{{player.team}}</td>
-			  	</tr>
-			  </table>	
-		  </div>
-
-		  <!-- Testing for K's -->
-		  <div id="k-results" class="table-results">
-			  <table class="table">
-			  	<thead>
-			  		<h3>Kickers This Week</h3>
-				 	<tr>
-				 		<th>Ranking</th>
-					  	<th>Player Name</th>
-					  	<th>Standard</th>
-					  	<th>Standard High</th>
-					  	<th>Standard Low</th>
-					  	<th>PPR</th>
-					  	<th>PPR High</th>
-					  	<th>PPR Low</th>
-					  	<th>Team</th>
-			  		</tr>
-			  	</thead>
-			  	<tr ng-repeat="player in topKs.Rankings">
-			  		<td>{{$index + 1}}</td>
-			  		<td>{{player.name}}</td>
-			  		<td>{{player.standard}}</td>
-			  		<td>{{player.standardHigh}}</td>
-			  		<td>{{player.standardLow}}</td>
-			  		<td>{{player.ppr}}</td>
-			  		<td>{{player.pprHigh}}</td>
-			  		<td>{{player.pprLow}}</td>
-			  		<td>{{player.team}}</td>
-			  	</tr>
-			  </table>	
-		  </div>
-	  	</div>
+		<div ng-view>
+		</div>
+		
 	</body>
 </html>

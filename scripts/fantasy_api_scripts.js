@@ -1,8 +1,3 @@
-(function(){
-	
-	var app = angular.module("fantasyApp", []);
-	var api_key = "u8ds4snvdbxq";
-
 	var MainCtrl = function($scope, $http){
 
 		var vm = $scope;
@@ -88,7 +83,4 @@
 
 
 	}
-
-	app.controller("MainCtrl", MainCtrl);
-
-}());
+	fantasyApp.controller("MainCtrl", MainCtrl);
