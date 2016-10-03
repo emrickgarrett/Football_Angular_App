@@ -2,11 +2,12 @@
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!doctype html>
 
-<html lang="en" ng-app="fantasyApp">
+<html lang="en">
 	<head>
 	  <meta charset="utf-8">
 
 	  <title>Fantasy Football Example</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <meta name="description" content="Fantasy Football Angular Demo">
 	  <meta name="author" content="Hugh Emrick">
 
@@ -16,16 +17,26 @@
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	  <script src="includes/angular.min.js"></script>
-    <script src="includes/angular-route.min.js"></script>
+	  <!-- IE Required polyfill -->
+	  <script src="node_modules/core-js/client/shim.min.js"></script>
 
+	  <script src="node_modules/zone.js/dist/zone.js"></script>
+	  <script src="node_modules/reflect-metadata/Reflect.js"></script>
+	  <script src="node_modules/systemjs/dist/system.src.js"></script>
 
+	  <!-- Configure SystemJS -->
+	  <script src="systemjs.config.js"></script>
+	  <script>
+	  		System.import('app').catch(function(err){console.log(err);});
+	  </script>
+
+	  <!--
 	  <script src="scripts/routing.js"></script>
-	  <script src="scripts/fantasy_api_scripts.js"></script>
+	  <script src="scripts/fantasy_api_scripts.js"></script>-->
 	  <link rel="stylesheet" href="styles/general_formatting.css">
 	</head>
 
-	<body ng-controller="MainCtrl">
+	<body>
 
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
@@ -62,8 +73,9 @@
 			</div>
 		</nav>
 
-		<div ng-view>
-		</div>
+		<fantasy-app>
+		Loading....
+		</fantasy-app>
 		
 	</body>
 </html>
